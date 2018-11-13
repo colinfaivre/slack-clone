@@ -6,7 +6,7 @@
         <h1>My New team</h1>
         <div class="user">
           <i class="material-icons presence">fiber_manual_record</i>
-          <div class="user-name">Colin Faivre</div>
+          <div class="user-name">Damien</div>
         </div>
       </header>
 
@@ -24,11 +24,21 @@
       <div class="direct-messages">
         <div class="direct-messages-header">
           <div class="direct-messages-title">Direct messages</div>
-          <i class="material-icons">add_circle_outline</i>
+          <i class="material-icons add-button">add_circle_outline</i>
         </div>
         <div class="direct-messages-content">
-          <div>Marine</div>
-          <div>Colin</div>
+          <div class="user">
+            <i class="material-icons presence">favorite</i>
+            <div class="user-name">Slack bot</div>
+          </div>
+          <div class="user">
+            <i class="material-icons presence">fiber_manual_record</i>
+            <div class="user-name">Damien (You)</div>
+          </div>
+          <div class="user">
+            <i class="material-icons absence">panorama_fish_eye</i>
+            <div class="user-name absence">Colin</div>
+          </div>
         </div>
       </div>
 
@@ -61,16 +71,21 @@ body{
   padding-top: 10px;
   padding-bottom: 5px;
 }
-.menu header .user{
+.user{
   display: flex;
   align-items: center;
   padding-left: 15px;
 }
-.menu header .user .material-icons{
-  font-size: 14px;
-}
-.menu header .presence{
+.presence{
   color: #4c9689;
+  font-size: 13px;
+}
+.absence{
+  color: #909997;
+  font-size: 13px;
+}
+.add-button{
+  font-size: 18px;
 }
 .menu header:hover{
   background-color: #3e313c;
@@ -111,9 +126,6 @@ body{
 .menu .channels-content > div:hover, .menu .direct-messages-content > div:hover{
   background-color: #3e313c;
   cursor: pointer;
-}
-.material-icons{
-  font-size: 19px;
 }
 router-view{
 
