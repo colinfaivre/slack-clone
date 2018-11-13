@@ -1,24 +1,34 @@
 <template>
   <div id="app">
     <div class="menu">
+      
       <header>
         <h1>My New team</h1>
         <div class="user-name">Colin Faivre</div>
       </header>
+
       <div class="channels">
-        <div class="channels-title">Channels</div>
+        <div class="channels-header">
+          <div class="channels-title">Channels</div>
+          <i class="material-icons add-button">add_circle_outline</i>
+        </div>
         <div class="channels-content">
           <div># super-channel</div>
           <div># autre-channel</div>
         </div>
       </div>
+
       <div class="direct-messages">
-        <div class="direct-messages-title">Direct messages</div>
+        <div class="direct-messages-header">
+          <div class="direct-messages-title">Direct messages</div>
+          <i class="material-icons">add_circle_outline</i>
+        </div>
         <div class="direct-messages-content">
           <div>Marine</div>
           <div>Colin</div>
         </div>
       </div>
+
     </div>
     <router-view/>
   </div>
@@ -61,14 +71,18 @@ body{
   padding-left: 15px;
   padding-right: 15px;
 }
+.menu .channels-header, .menu .direct-messages-header{
+  display: flex;
+  justify-content: space-between;
+}
 .menu .channels, .menu .direct-messages{
   padding-top: 18px;
 }
-.menu .channels-title, .menu .direct-messages-title{
+.menu .channels-header, .menu .direct-messages-header{
   padding-left: 15px;
   padding-right: 15px;
 }
-.menu .channels-title:hover, .menu .direct-messages-title:hover{
+.menu .channels-header:hover, .menu .direct-messages-header:hover{
   color: white;
   cursor: pointer;
 }
