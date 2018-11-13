@@ -1,6 +1,6 @@
 <template>
   <div class="channel">
-   Channel
+   Create Chat
   </div>
 </template>
 

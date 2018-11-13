@@ -22,10 +22,12 @@
       </div>
 
       <div class="direct-messages">
-        <div class="direct-messages-header">
-          <div class="direct-messages-title">Direct messages</div>
-          <i class="material-icons add-button">add_circle_outline</i>
-        </div>
+        <router-link to="/create-chat">
+          <div class="direct-messages-header">
+            <div class="direct-messages-title">Direct messages</div>
+            <i class="material-icons add-button">add_circle_outline</i>
+          </div>
+        </router-link>
         <div class="direct-messages-content">
           <div class="user">
             <i class="material-icons presence">favorite</i>
@@ -46,6 +48,21 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'app',
+    data() {
+      return {
+        users: null,
+        channels: null
+      }
+    },
+    methods: {
+        
+    }
+}
+</script>
 
 <style>
 #app {
