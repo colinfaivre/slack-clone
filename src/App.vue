@@ -147,4 +147,8 @@ body{
 router-view{
 
 }
+a{
+  text-decoration: none;
+  color:inherit;
+}
 </style>
