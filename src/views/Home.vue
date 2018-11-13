@@ -1,17 +1,17 @@
 <template>
-  <div class="channel">
-   Channel
+  <div class="home">
+   Home
   </div>
 </template>
 
 <script>
 export default {
-  name: 'channel'
+  name: 'home'
 }
 </script>
 
 <style>
-.channel{
+.home{
   padding: 15px;
 }
 </style>

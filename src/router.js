@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Channel from './views/Channel.vue'
+import Home from './views/Home.vue'
 import CreateChat from './views/CreateChat.vue'
 import CreateChannel from './views/CreateChannel.vue'
 
@@ -12,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'channel',
-      component: Channel
+      name: 'home',
+      component: Home
     },
     {
       path: '/create-chat',

@@ -54,15 +54,15 @@
 <script>
 export default {
   name: 'app',
-    data() {
-      return {
-        users: null,
-        channels: null
-      }
-    },
-    methods: {
-        
+  data() {
+    return {
+      users: null,
+      channels: null
     }
+  },
+  methods: {
+      
+  }
 }
 </script>
 
