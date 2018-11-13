@@ -4,7 +4,10 @@
       
       <header>
         <h1>My New team</h1>
-        <div class="user-name">Colin Faivre</div>
+        <div class="user">
+          <i class="material-icons presence">fiber_manual_record</i>
+          <div class="user-name">Colin Faivre</div>
+        </div>
       </header>
 
       <div class="channels">
@@ -54,6 +57,21 @@ body{
   font-size: 15px;
   /* padding: 15px; */
 }
+.menu header{
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.menu header .user{
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+.menu header .user .material-icons{
+  font-size: 14px;
+}
+.menu header .presence{
+  color: #4c9689;
+}
 .menu header:hover{
   background-color: #3e313c;
   cursor: pointer;
@@ -68,12 +86,12 @@ body{
   padding-right: 15px;
 }
 .user-name{
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 5px;
 }
 .menu .channels-header, .menu .direct-messages-header{
   display: flex;
   justify-content: space-between;
+  align-items:center;
 }
 .menu .channels, .menu .direct-messages{
   padding-top: 18px;
@@ -93,6 +111,9 @@ body{
 .menu .channels-content > div:hover, .menu .direct-messages-content > div:hover{
   background-color: #3e313c;
   cursor: pointer;
+}
+.material-icons{
+  font-size: 19px;
 }
 router-view{
 
