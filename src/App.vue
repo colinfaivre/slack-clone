@@ -11,10 +11,12 @@
       </header>
 
       <div class="channels">
-        <div class="channels-header">
-          <div class="channels-title">Channels</div>
-          <i class="material-icons add-button">add_circle_outline</i>
-        </div>
+        <router-link to="/create-channel">
+          <div class="channels-header">
+            <div class="channels-title">Channels</div>
+            <i class="material-icons add-button">add_circle_outline</i>
+          </div>
+        </router-link>  
         <div class="channels-content">
           <div># super-channel</div>
           <div># autre-channel</div>
