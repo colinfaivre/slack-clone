@@ -11,26 +11,26 @@
       </header>
 
       <div class="channels">
-        <router-link to="/create-channel">
+        <router-link to="/create-channel" class="no-outline">
           <div class="channels-header">
             <div class="channels-title">Channels</div>
             <i class="material-icons add-button">add_circle_outline</i>
           </div>
         </router-link>  
         <div class="channels-content">
-          <router-link v-for="(channel, index) in $store.state.channels" :to="{ name: 'channel', params: { channelTitle: channel.title } }"><div class="channel"># {{ channel.title }}</div></router-link>
+          <router-link v-for="(channel, index) in $store.state.channels" :to="{ name: 'channel', params: { channelTitle: channel.title } }" class="no-outline"><div class="channel"># {{ channel.title }}</div></router-link>
         </div>
       </div>
 
       <div class="direct-messages">
-        <router-link to="/create-chat">
+        <router-link to="/create-chat" class="no-outline">
           <div class="direct-messages-header">
             <div class="direct-messages-title">Direct messages</div>
             <i class="material-icons add-button">add_circle_outline</i>
           </div>
         </router-link>
         <div class="direct-messages-content">
-          <router-link  class="user" v-for="(chat, index) in $store.state.chats" :to="{ name: 'chat', params: { chatTitle: chat.title } }">
+          <router-link  class="user chat" v-for="(chat, index) in $store.state.chats" :to="{ name: 'chat', params: { chatTitle: chat.title } }">
             <i v-if="index === 0" class="material-icons presence">favorite</i>
             <i v-if="index === 1" class="material-icons presence">fiber_manual_record</i>
             <i v-if="index > 1" class="material-icons absence">panorama_fish_eye</i>
@@ -124,25 +124,29 @@ body{
 }
 .menu .channels, .menu .direct-messages{
   padding-top: 18px;
+  /* outline: 0; */
 }
 .menu .channels-header, .menu .direct-messages-header{
   padding-left: 15px;
   padding-right: 15px;
+  /* outline: 0; */
 }
 .menu .channels-header:hover, .menu .direct-messages-header:hover{
   color: white;
   cursor: pointer;
+  outline: 0;
 }
-.channel, .menu .direct-messages-content > div{
+.channel, .chat{
   padding-left: 15px;
   padding-right: 15px;
+  outline: 0;
 }
-.channel:hover, .menu .direct-messages-content > div:hover{
+.no-outline{
+  outline: 0;
+}
+.channel:hover, .chat:hover{
   background-color: #3e313c;
   cursor: pointer;
-}
-router-view{
-
 }
 a{
   text-decoration: none;
