@@ -6,21 +6,42 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     channels: [
-      'super-channel',
-      'autre-channel'
+      {
+        title: 'super-channel',
+        messages: []
+      },
+      {
+        title: 'other-channel',
+        messages: []
+      }
     ],
     chats: [
-      'Slack bot',
-      'Damien (You)',
-      'Colin'
+      {
+        title: 'Slack bot',
+        messages: []
+      },
+      {
+        title: 'Damien (You)',
+        messages: []
+      },
+      {
+        title: 'Colin',
+        messages: []
+      }
     ]
   },
   mutations: {
     ADD_CHANNEL(state, newChannel) {
-      state.channels.push(newChannel)
+      state.channels.push({
+        title: newChannel,
+        messages: []
+      })
     },
     ADD_CHAT(state, newChat) {
-      state.chats.push(newChat)
+      state.chats.push({
+        title: newChat,
+        messages: []
+      })
     },
   },
   actions: {

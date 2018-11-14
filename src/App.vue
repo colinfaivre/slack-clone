@@ -18,7 +18,7 @@
           </div>
         </router-link>  
         <div class="channels-content">
-          <div v-for="(channel, index) in $store.state.channels"># {{ channel }}</div>
+          <div v-for="(channel, index) in $store.state.channels"># {{ channel.title }}</div>
         </div>
       </div>
 
@@ -34,7 +34,7 @@
             <i v-if="index === 0" class="material-icons presence">favorite</i>
             <i v-if="index === 1" class="material-icons presence">fiber_manual_record</i>
             <i v-if="index > 1" class="material-icons absence">panorama_fish_eye</i>
-            <div class="user-name">{{ chat }}</div>
+            <div class="user-name">{{ chat.title }}</div>
           </div>
         </div>
       </div>
