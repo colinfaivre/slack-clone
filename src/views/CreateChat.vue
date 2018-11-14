@@ -1,5 +1,5 @@
 <template>
-  <div class="chat">
+  <div class="create-chat">
    Create Chat
    <br><br>
 
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-.chat{
+.create-chat{
   padding: 15px;
 }
 </style>
