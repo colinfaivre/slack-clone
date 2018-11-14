@@ -1,38 +1,40 @@
 <template>
   <div id="app">
-    <div class="menu">
-      
+    <div class="menu" :style="{ height: menuHeight}">
       <header>
-        <h1>My New team</h1>
-        <div class="user">
-          <i class="material-icons presence">fiber_manual_record</i>
-          <div class="user-name">Damien</div>
+        <div>
+          <h1>My New team</h1>
+          <div class="user">
+            <i class="material-icons presence">fiber_manual_record</i>
+            <div class="user-name">Damien</div>
+          </div>
         </div>
+        <i @click="toggleMenu()" class="material-icons menu-icon">menu</i>
       </header>
 
-      <div class="channels">
-        <router-link to="/create-channel" class="no-outline">
+      <div v-if="menuIsOpen" class="channels">
+        <router-link @click.native="toggleMenu()" to="/create-channel" class="no-outline">
           <div class="channels-header">
             <div class="channels-title">Channels</div>
             <i class="material-icons add-button">add_circle_outline</i>
           </div>
         </router-link>  
         <div class="channels-content">
-          <router-link class="green-focus user no-outline" v-for="(channel, index) in $store.state.channels" :to="{ name: 'channel', params: { channelTitle: channel.title } }">
+          <router-link @click.native="toggleMenu()" class="green-focus user no-outline" v-for="(channel, index) in $store.state.channels" :to="{ name: 'channel', params: { channelTitle: channel.title } }">
             <div># {{ channel.title }}</div>
           </router-link>
         </div>
       </div>
 
-      <div class="direct-messages">
-        <router-link to="/create-chat" class="no-outline">
+      <div v-if="menuIsOpen" class="direct-messages">
+        <router-link @click.native="toggleMenu()" to="/create-chat" class="no-outline">
           <div class="direct-messages-header">
             <div class="direct-messages-title">Direct messages</div>
             <i class="material-icons add-button">add_circle_outline</i>
           </div>
         </router-link>
         <div class="direct-messages-content">
-          <router-link  class="user chat" v-for="(chat, index) in $store.state.chats" :to="{ name: 'chat', params: { chatTitle: chat.title } }">
+          <router-link @click.native="toggleMenu()" class="user chat" v-for="(chat, index) in $store.state.chats" :to="{ name: 'chat', params: { chatTitle: chat.title } }">
             <i v-if="index === 0" class="material-icons presence">favorite</i>
             <i v-if="index === 1" class="material-icons presence">fiber_manual_record</i>
             <i v-if="index > 1" class="material-icons absence">panorama_fish_eye</i>
@@ -52,14 +54,40 @@ export default {
   data() {
     return {
       users: null,
+      menuIsOpen: true,
+      menuHeight: '100vh',
+      windowWidth: 1000
     }
   },
   methods: {
-      
+    toggleMenu(){
+      if(this.windowWidth < 600){
+        this.menuIsOpen = !this.menuIsOpen
+        if(this.menuIsOpen){
+          this.menuHeight = '100vh'
+        } else{
+          this.menuHeight = '65px'
+        }
+      }
+    }
   },
   computed: {
   
-  }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', () => {
+        this.windowWidth = window.innerWidth
+        if(this.windowWidth < 600){
+          this.menuIsOpen = false
+          this.menuHeight = '65px'
+        } else {
+          this.menuIsOpen = true
+          this.menuHeight = '100vh'
+        }
+      });
+    })
+  },
 }
 </script>
 
@@ -85,7 +113,14 @@ body{
 }
 .menu header{
   padding-top: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-icon{
+  margin-right: 15px;
+  font-size: 35px;
 }
 .user{
   display: flex;
@@ -156,4 +191,19 @@ a{
   text-decoration: none;
   color:inherit;
 }
+@media only screen and (max-width: 600px) {
+  #app {
+    flex-direction: column;
+  }
+  .menu {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .menu-icon{
+    display: none;
+  }
+}
+
 </style>
