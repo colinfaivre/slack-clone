@@ -18,7 +18,9 @@
           </div>
         </router-link>  
         <div class="channels-content">
-          <router-link v-for="(channel, index) in $store.state.channels" :to="{ name: 'channel', params: { channelTitle: channel.title } }" class="no-outline"><div class="channel"># {{ channel.title }}</div></router-link>
+          <router-link class="no-outline green-focus" v-for="(channel, index) in $store.state.channels" :to="{ name: 'channel', params: { channelTitle: channel.title } }">
+            <div class="channel"># {{ channel.title }}</div>
+          </router-link>
         </div>
       </div>
 
@@ -124,12 +126,10 @@ body{
 }
 .menu .channels, .menu .direct-messages{
   padding-top: 18px;
-  /* outline: 0; */
 }
 .menu .channels-header, .menu .direct-messages-header{
   padding-left: 15px;
   padding-right: 15px;
-  /* outline: 0; */
 }
 .menu .channels-header:hover, .menu .direct-messages-header:hover{
   color: white;
@@ -147,6 +147,10 @@ body{
 .channel:hover, .chat:hover{
   background-color: #3e313c;
   cursor: pointer;
+}
+.green-focus:focus, .chat:focus{
+  background-color: #4c9689;
+  color: white;
 }
 a{
   text-decoration: none;
