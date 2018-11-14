@@ -4,13 +4,12 @@
    <br><br>
 
    <form @submit.prevent="addChannel(newChannel)">
-      <label for="channel">New channel</label>
+      <!-- <label for="channel">New channel</label> -->
+      <!-- <br> -->
+      <input type="text" name="text" v-model="newChannel" placeholder="New channel">
       <br>
-      <input type="text" name="text" v-model="newChannel">
-      <br>
-      <button>Create channel</button>
+      <button>Add channel</button>
     </form>
-    {{ channels }}
   </div>
 </template>
 
@@ -24,8 +23,8 @@ export default {
     }
   },
   methods: {
-    addChannel(newChannel) {
-      this.channels.push(newChannel)
+    addChannel() {
+      this.$store.commit('ADD_CHANNEL', this.newChannel)
       this.newChannel = null
     }
   }

@@ -18,8 +18,7 @@
           </div>
         </router-link>  
         <div class="channels-content">
-          <div># super-channel</div>
-          <div># autre-channel</div>
+          <div v-for="channel in $store.state.channels"># {{ channel }}</div>
         </div>
       </div>
 
@@ -57,11 +56,13 @@ export default {
   data() {
     return {
       users: null,
-      channels: null
     }
   },
   methods: {
       
+  },
+  computed: {
+  
   }
 }
 </script>
