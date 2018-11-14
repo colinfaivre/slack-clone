@@ -1,6 +1,6 @@
 <template>
   <div class="specific-channel">
-   # {{ $route.params.channelTitle }}
+   <h1>#{{ $route.params.channelTitle }}</h1>
    <br><br>
    <div v-for="message in messages" class="message-content">{{ message }}</div> 
    <form @submit.prevent="addMessage(newMessage)">
@@ -37,6 +37,22 @@ export default {
 
 <style scoped>
 .specific-channel{
-  padding: 15px;
+  width: calc(100% - 220px);
+}
+h1{
+  color: black;
+  font-weight: 900;
+  font-size: 17px;
+  margin: 0px;
+  padding-top: 8px;
+  padding-left: 18px;
+  padding-right: 10px;
+  padding-bottom: 32px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(228, 228, 228);
+  /* background-color: red; */
+
+  width: 100%;
 }
 </style>

@@ -146,7 +146,7 @@ body{
 .menu h1{
   color: white;
   font-weight: 900;
-  font-size: 1rem;
+  font-size: 17px;
   margin: 0px;
   padding-left: 15px;
   padding-right: 15px;
