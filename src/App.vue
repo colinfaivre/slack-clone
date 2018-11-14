@@ -179,7 +179,7 @@ body{
 .no-outline{
   outline: 0;
 }
-.channel:hover, .chat:hover{
+.green-focus:hover, .chat:hover{
   background-color: #3e313c;
   cursor: pointer;
 }
