@@ -18,7 +18,7 @@
           </div>
         </router-link>  
         <div class="channels-content">
-          <div v-for="channel in $store.state.channels"># {{ channel }}</div>
+          <div v-for="(channel, index) in $store.state.channels"># {{ channel }}</div>
         </div>
       </div>
 
@@ -30,17 +30,11 @@
           </div>
         </router-link>
         <div class="direct-messages-content">
-          <div class="user">
-            <i class="material-icons presence">favorite</i>
-            <div class="user-name">Slack bot</div>
-          </div>
-          <div class="user">
-            <i class="material-icons presence">fiber_manual_record</i>
-            <div class="user-name">Damien (You)</div>
-          </div>
-          <div class="user">
-            <i class="material-icons absence">panorama_fish_eye</i>
-            <div class="user-name absence">Colin</div>
+          <div class="user" v-for="(chat, index) in $store.state.chats">
+            <i v-if="index === 0" class="material-icons presence">favorite</i>
+            <i v-if="index === 1" class="material-icons presence">fiber_manual_record</i>
+            <i v-if="index > 1" class="material-icons absence">panorama_fish_eye</i>
+            <div class="user-name">{{ chat }}</div>
           </div>
         </div>
       </div>

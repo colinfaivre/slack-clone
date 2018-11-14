@@ -4,8 +4,6 @@
    <br><br>
 
    <form @submit.prevent="addChannel(newChannel)">
-      <!-- <label for="channel">New channel</label> -->
-      <!-- <br> -->
       <input type="text" name="text" v-model="newChannel" placeholder="New channel">
       <br>
       <button>Add channel</button>

@@ -9,7 +9,7 @@ export default new Vuex.Store({
       'super-channel',
       'autre-channel'
     ],
-    chat: [
+    chats: [
       'Slack bot',
       'Damien (You)',
       'Colin'
@@ -20,7 +20,7 @@ export default new Vuex.Store({
       state.channels.push(newChannel)
     },
     ADD_CHAT(state, newChat) {
-      state.chat.push(newChat)
+      state.chats.push(newChat)
     },
   },
   actions: {
