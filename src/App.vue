@@ -18,8 +18,8 @@
           </div>
         </router-link>  
         <div class="channels-content">
-          <router-link class="no-outline green-focus" v-for="(channel, index) in $store.state.channels" :to="{ name: 'channel', params: { channelTitle: channel.title } }">
-            <div class="channel"># {{ channel.title }}</div>
+          <router-link class="green-focus user no-outline" v-for="(channel, index) in $store.state.channels" :to="{ name: 'channel', params: { channelTitle: channel.title } }">
+            <div># {{ channel.title }}</div>
           </router-link>
         </div>
       </div>
