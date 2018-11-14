@@ -1,5 +1,5 @@
 <template>
-  <div class="channel">
+  <div class="create-channel">
    Create Channel
    <br><br>
 
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-.channel{
+.create-channel{
   padding: 15px;
 }
 </style>

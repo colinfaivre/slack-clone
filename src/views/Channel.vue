@@ -1,6 +1,6 @@
 <template>
   <div class="specific-channel">
-   {{ $route.params.channelTitle }}
+   # {{ $route.params.channelTitle }}
    <br><br>
 
    <form @submit.prevent="addMessage(newMessage)">
@@ -22,7 +22,9 @@ export default {
   },
   methods: {
     addMessage() {
-      this.$store.commit('ADD_MESSAGE', this.newMessage)
+      const payload = { channelTitle: this.$route.params.channelTitle, content: this.newMessage }
+      this.$store.commit('ADD_MESSAGE', payload)
+      console.log(payload)
       this.newMessage = null
     }
   }
