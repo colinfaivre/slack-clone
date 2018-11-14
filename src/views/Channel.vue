@@ -2,8 +2,7 @@
   <div class="specific-channel">
    # {{ $route.params.channelTitle }}
    <br><br>
-   <div v-for="message in messages" class="message-content">{{ message }}</div>
-   <br><br> 
+   <div v-for="message in messages" class="message-content">{{ message }}</div> 
    <form @submit.prevent="addMessage(newMessage)">
       <input type="text" name="text" v-model="newMessage" placeholder="New message">
       <br>

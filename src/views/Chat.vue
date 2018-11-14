@@ -3,7 +3,6 @@
    {{ $route.params.chatTitle }}
    <br><br>
    <div v-for="message in messages" class="message-content">{{ message }}</div>
-   <br><br> 
    <form @submit.prevent="addMessage(newMessage)">
       <input type="text" name="text" v-model="newMessage" placeholder="New message">
       <br>
