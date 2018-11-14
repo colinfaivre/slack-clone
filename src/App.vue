@@ -30,12 +30,12 @@
           </div>
         </router-link>
         <div class="direct-messages-content">
-          <div class="user" v-for="(chat, index) in $store.state.chats">
+          <router-link  class="user" v-for="(chat, index) in $store.state.chats" :to="{ name: 'chat', params: { chatTitle: chat.title } }">
             <i v-if="index === 0" class="material-icons presence">favorite</i>
             <i v-if="index === 1" class="material-icons presence">fiber_manual_record</i>
             <i v-if="index > 1" class="material-icons absence">panorama_fish_eye</i>
             <div class="user-name">{{ chat.title }}</div>
-          </div>
+          </router-link>
         </div>
       </div>
 

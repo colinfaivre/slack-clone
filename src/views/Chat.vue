@@ -1,6 +1,6 @@
 <template>
-  <div class="specific-channel">
-   # {{ $route.params.channelTitle }}
+  <div class="specific-chat">
+   {{ $route.params.chatTitle }}
    <br><br>
    <div v-for="message in messages" class="message-content">{{ message }}</div>
    <br><br> 
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'Channel',
+  name: 'Chat',
   data() {
     return {
       newMessage: null
@@ -22,22 +22,22 @@ export default {
   },
   methods: {
     addMessage() {
-      const payload = { channelTitle: this.$route.params.channelTitle, content: this.newMessage }
-      this.$store.commit('ADD_CHANNEL_MESSAGE', payload)
+      const payload = { chatTitle: this.$route.params.chatTitle, content: this.newMessage }
+      this.$store.commit('ADD_CHAT_MESSAGE', payload)
       this.newMessage = null
     }
   },
   computed: {
     messages: function() {
-      const currentChannel = this.$store.state.channels.findIndex(x => x.title === this.$route.params.channelTitle)
-      return this.$store.state.channels[currentChannel].messages
+      const currentChat = this.$store.state.chats.findIndex(x => x.title === this.$route.params.chatTitle)
+      return this.$store.state.chats[currentChat].messages
     }
   }
 }
 </script>
 
 <style scoped>
-.specific-channel{
+.specific-chat{
   padding: 15px;
 }
 </style>

@@ -43,9 +43,13 @@ export default new Vuex.Store({
         messages: []
       })
     },
-    ADD_MESSAGE(state, newMessage) {
+    ADD_CHANNEL_MESSAGE(state, newMessage) {
       const currentChannel = state.channels.findIndex(x => x.title === newMessage.channelTitle)
       state.channels[currentChannel].messages.push(newMessage.content)
+    },
+    ADD_CHAT_MESSAGE(state, newMessage) {
+      const currentChat = state.chats.findIndex(x => x.title === newMessage.chatTitle)
+      state.chats[currentChat].messages.push(newMessage.content)
     }
   },
   actions: {
