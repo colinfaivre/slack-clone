@@ -18,7 +18,7 @@
           </div>
         </router-link>  
         <div class="channels-content">
-          <div v-for="(channel, index) in $store.state.channels"># {{ channel.title }}</div>
+          <router-link to="/channel" v-for="(channel, index) in $store.state.channels"><div class="channel"># {{ channel.title }}</div></router-link>
         </div>
       </div>
 
@@ -133,11 +133,11 @@ body{
   color: white;
   cursor: pointer;
 }
-.menu .channels-content > div, .menu .direct-messages-content > div{
+.channel, .menu .direct-messages-content > div{
   padding-left: 15px;
   padding-right: 15px;
 }
-.menu .channels-content > div:hover, .menu .direct-messages-content > div:hover{
+.channel:hover, .menu .direct-messages-content > div:hover{
   background-color: #3e313c;
   cursor: pointer;
 }

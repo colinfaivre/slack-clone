@@ -1,6 +1,6 @@
 <template>
-  <div class="channel">
-   Create Channel
+  <div class="specific-channel">
+   Channel name
    <br><br>
 
    <form @submit.prevent="addChannel(newChannel)">
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-.channel{
+.specific-channel{
   padding: 15px;
 }
 </style>
