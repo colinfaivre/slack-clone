@@ -27,7 +27,7 @@ export default new Router({
       component: CreateChannel
     },
     {
-      path: '/channel',
+      path: '/channels/:channelTitle',
       name: 'channel',
       component: Channel
     },

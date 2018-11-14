@@ -1,12 +1,12 @@
 <template>
   <div class="specific-channel">
-   Channel name
+   {{ $route.params.channelTitle }}
    <br><br>
 
-   <form @submit.prevent="addChannel(newChannel)">
-      <input type="text" name="text" v-model="newChannel" placeholder="New channel">
+   <form @submit.prevent="addMessage(newMessage)">
+      <input type="text" name="text" v-model="newMessage" placeholder="New message">
       <br>
-      <button>Add channel</button>
+      <button>Add message</button>
     </form>
   </div>
 </template>
@@ -16,14 +16,14 @@ export default {
   name: 'Channel',
   data() {
     return {
-      channels: [],
-      newChannel: null
+      messages: [],
+      newMessage: null
     }
   },
   methods: {
-    addChannel() {
-      this.$store.commit('ADD_CHANNEL', this.newChannel)
-      this.newChannel = null
+    addMessage() {
+      this.$store.commit('ADD_MESSAGE', this.newMessage)
+      this.newMessage = null
     }
   }
 }

@@ -18,7 +18,7 @@
           </div>
         </router-link>  
         <div class="channels-content">
-          <router-link to="/channel" v-for="(channel, index) in $store.state.channels"><div class="channel"># {{ channel.title }}</div></router-link>
+          <router-link v-for="(channel, index) in $store.state.channels" :to="{ name: 'channel', params: { channelTitle: channel.title } }"><div class="channel"># {{ channel.title }}</div></router-link>
         </div>
       </div>
 
