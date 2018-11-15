@@ -15,7 +15,7 @@
     </div>
    
    <form @submit.prevent="addMessage(newMessage)">
-      <input autocomplete="off" autofocus class="message-input" type="text" name="text" v-model="newMessage" :placeholder="'Message #' + $route.params.chatTitle">
+      <input autocomplete="off" autofocus class="message-input" type="text" name="text" v-model="newMessage" :placeholder="'Message ' + $route.params.chatTitle">
     </form>
   </div>
 </template>
