@@ -15,7 +15,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      redirect: { name: 'create-channel' }
     },
     {
       path: '/create-chat',
