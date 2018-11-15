@@ -1,12 +1,12 @@
 <template>
   <div class="specific-channel">
    <h1>#{{ $route.params.channelTitle }}</h1>
+   
    <br><br>
    <div v-for="message in messages" class="message-content">{{ message }}</div> 
+   
    <form @submit.prevent="addMessage(newMessage)">
-      <input type="text" name="text" v-model="newMessage" placeholder="New message">
-      <br>
-      <button>Add message</button>
+      <input autocomplete="off" autofocus @keyup.enter="addMessage(newMessage)" class="message-input" type="text" name="text" v-model="newMessage" :placeholder="'Message #' + $route.params.channelTitle">
     </form>
   </div>
 </template>
@@ -38,6 +38,7 @@ export default {
 <style scoped>
 .specific-channel{
   width: calc(100% - 220px);
+  position: relative;
 }
 h1{
   color: black;
@@ -46,13 +47,33 @@ h1{
   margin: 0px;
   padding-top: 8px;
   padding-left: 18px;
-  padding-right: 10px;
   padding-bottom: 32px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: rgb(228, 228, 228);
-  /* background-color: red; */
-
+  width: calc(100% - 18px);
+}
+form {
+  width: 95%;
+  margin-left: 2%;
+  margin-right: 2%;
+  position: absolute;
+  bottom: 20px;
+}
+.message-input{
+  border-style: solid;
+  border-color: grey;
+  border-radius: 5px;
   width: 100%;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 15px;
+  color: rgb(59, 59, 59);
+}
+input::-webkit-input-placeholder {
+  color: rgb(170, 170, 170) !important;
+}
+input:focus{
+    outline: none;
 }
 </style>
