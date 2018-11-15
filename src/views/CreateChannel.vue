@@ -35,7 +35,7 @@ export default {
 
 <style scoped>
 .create-channel{
-  padding: 15px;
+  /* padding: 15px; */
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -77,5 +77,11 @@ label{
 p{
   color: grey;
   font-size: 14px;
+}
+@media only screen and (max-width: 600px) {
+  .center-box{
+    height: 70vh;
+    width: 80vw;
+  }
 }
 </style>
