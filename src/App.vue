@@ -75,6 +75,7 @@ export default {
   
   },
   mounted() {
+    this.windowWidth = window.innerWidth
     this.$nextTick(() => {
       window.addEventListener('resize', () => {
         this.windowWidth = window.innerWidth
