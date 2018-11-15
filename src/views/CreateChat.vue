@@ -4,7 +4,7 @@
     <h1>Direct Messages</h1>
 
     <form @submit.prevent="addChat(newChat)">
-        <input autocomplete="off" autofocus class="message-input" type="text" name="text" v-model="newChat" placeholder="Sart conversation">
+        <input autocomplete="off" autofocus class="message-input" type="text" name="text" v-model="newChat" placeholder="Start conversation">
     </form>
    </div>
   </div>
