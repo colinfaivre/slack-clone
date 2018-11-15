@@ -1,12 +1,21 @@
 <template>
   <div class="specific-channel">
-   <h1>#{{ $route.params.channelTitle }}</h1>
+    <h1>#{{ $route.params.channelTitle }}</h1>
    
-   <br><br>
-   <div v-for="message in messages" class="message-content">{{ message }}</div> 
+    <div class="single-message" v-for="message in messages">
+      <img class="avatar" src="https://ca.slack-edge.com/TE2ALC8KZ-UE0GVJBKJ-g0307153ee5b-72">
+      <div class="message-text">
+        <div class="userName">
+          Damien
+        </div>
+        <div class="message-content">
+          {{ message }}
+        </div>
+      </div>
+    </div>
    
    <form @submit.prevent="addMessage(newMessage)">
-      <input autocomplete="off" autofocus @keyup.enter="addMessage(newMessage)" class="message-input" type="text" name="text" v-model="newMessage" :placeholder="'Message #' + $route.params.channelTitle">
+      <input autocomplete="off" autofocus class="message-input" type="text" name="text" v-model="newMessage" :placeholder="'Message #' + $route.params.channelTitle">
     </form>
   </div>
 </template>
@@ -75,5 +84,26 @@ input::-webkit-input-placeholder {
 }
 input:focus{
     outline: none;
+}
+.avatar{
+  width: 40px;
+  border-radius:5px;
+}
+.single-message{
+  display: flex;
+  height: 40px;
+  margin-left: 19px;
+  margin-top: 15px;
+}
+.message-text{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  font-size: 14px;
+}
+.userName{
+  color:black;
+  font-weight: 600;
+  
 }
 </style>
