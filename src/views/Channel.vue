@@ -30,9 +30,11 @@ export default {
   },
   methods: {
     addMessage() {
-      const payload = { channelTitle: this.$route.params.channelTitle, content: this.newMessage }
-      this.$store.commit('ADD_CHANNEL_MESSAGE', payload)
-      this.newMessage = null
+      if (this.newMessage){
+        const payload = { channelTitle: this.$route.params.channelTitle, content: this.newMessage }
+        this.$store.commit('ADD_CHANNEL_MESSAGE', payload)
+        this.newMessage = null
+      }
     }
   },
   computed: {
@@ -76,6 +78,7 @@ form {
   width: 100%;
   height: 40px;
   padding-left: 10px;
+  width: calc(100% - 10px);
   font-size: 15px;
   color: rgb(59, 59, 59);
 }
@@ -105,5 +108,18 @@ input:focus{
   color:black;
   font-weight: 600;
   
+}
+@media only screen and (max-width: 600px) {
+  .specific-channel {
+    width: 100%;
+    height: calc(100vh - 60px);
+  }
+  form {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  position: absolute;
+  bottom: 20px;
+}
 }
 </style>
